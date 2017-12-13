@@ -19,7 +19,8 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find(params[:id])
+    @address = Address.new
+    @address.student_id = @student.id
   end
 
   def edit

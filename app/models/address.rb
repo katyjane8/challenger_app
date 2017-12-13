@@ -1,4 +1,4 @@
-class Address < ApplicationRecord
+class Address < ActiveRecord::Base
   belongs_to :student
 
 end
