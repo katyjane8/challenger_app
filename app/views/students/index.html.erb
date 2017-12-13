@@ -7,9 +7,11 @@
   <body>
     Students List <br>
     <% @students.each do |student| %>
-      <p><%= student.name %></p>
+      <p><%= link_to student.name, student_path(student) %></p>
+      <div class="button">
       <%= link_to "Delete", student_path(student), method: :delete %>
-      <% end %>
-      <%= link_to "Create a new student",  %>
+      </div>
+      <% end %> <br>
+      <%= link_to "Create a new student", new_student_path %>
   </body>
 </html>
