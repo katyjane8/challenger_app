@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
-
+    Students List <br>
+    <% @students.each do |student| %>
+      <%= student.name %>
+      <% end %>
   </body>
 </html>

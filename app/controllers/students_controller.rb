@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
+  before_action :set_student, only: [:show, :destroy, :edit, :update]
 
   def index
-    require "pry"; binding.pry
     @students = Student.all
   end
 
@@ -19,7 +19,8 @@ class StudentsController < ApplicationController
   end
 
   def show
-    redirect_to students_path(@students)
+    @student = Student.new
+    @student.id
   end
 
   def edit
@@ -31,5 +32,8 @@ class StudentsController < ApplicationController
     params.require(:student).permit(:name)
   end
 
+  def set_student
+    @student = Student.find(params[:id])
+  end
 
 end
