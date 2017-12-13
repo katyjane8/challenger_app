@@ -15,12 +15,11 @@ class StudentsController < ApplicationController
 
     @student.save
 
-    redirect_to students_path(@students.id)
+    redirect_to students_path(@students)
   end
 
   def show
-    @student = Student.new
-    @student.id
+    @student = Student.find(params[:id])
   end
 
   def edit
