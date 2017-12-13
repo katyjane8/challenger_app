@@ -1,6 +1,4 @@
-class Student < ActiveRecord::Base
+class Student < ApplicationRecord
   validates :name, presence: true
 
-  def self.foo
-  end 
 end
